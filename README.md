@@ -3,10 +3,10 @@
 ![InstantShare Banner](https://via.placeholder.com/1200x400.png?text=InstantShare+-+Secure+Text+%26+Link+Sharing)
 
 <div align="center">
-  <a href="https://your-github-username.github.io/instant-share/" target="_blank">
+  <a href="https://bapux03.github.io/InstantShare---Secure-Text-Link-Sharing-Platform/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-%20%E2%86%92-brightgreen?style=for-the-badge&logo=github&logoColor=white" alt="Live Demo">
   </a>
-  <a href="https://github.com/BAPUx03/instant-share" target="_blank">
+  <a href="ttps://github.com/BAPUx03/InstantShare---Secure-Text-Link-Sharing-Platform/" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
   </a>
 </div>
