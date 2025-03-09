@@ -1,6 +1,6 @@
 # 🚀 InstantShare - Secure Text & Link Sharing
 
-![InstantShare Banner](https://postimg.cc/Mvqk5hdj)
+![InstantShare Banner](https://imgur.com/a/INt1sSe)
 
 <div align="center">
   <a href="https://bapux03.github.io/InstantShare---Secure-Text-Link-Sharing-Platform/" target="_blank">
