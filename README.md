@@ -75,4 +75,4 @@ Check out the live demo of InstantShare:
 ### Steps to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/BAPUx03/instant-share.git
+   sorry not available , use replit for own api and run it , i use a uptimerobot for api calling and live ( Pruthviraj )
