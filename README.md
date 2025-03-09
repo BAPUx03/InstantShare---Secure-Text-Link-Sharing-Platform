@@ -6,7 +6,7 @@
   <a href="https://bapux03.github.io/InstantShare---Secure-Text-Link-Sharing-Platform/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-%20%E2%86%92-brightgreen?style=for-the-badge&logo=github&logoColor=white" alt="Live Demo">
   </a>
-  <a href="ttps://github.com/BAPUx03/InstantShare---Secure-Text-Link-Sharing-Platform/" target="_blank">
+  <a href="https://github.com/BAPUx03/InstantShare---Secure-Text-Link-Sharing-Platform" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-Repo-blue?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
   </a>
 </div>
