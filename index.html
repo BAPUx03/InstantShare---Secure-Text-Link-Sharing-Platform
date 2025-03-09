@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstantShare | Secure Text Sharing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="relative overflow-x-hidden transition-colors duration-300 min-h-screen">
+    <!-- Animated Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 flex justify-between p-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+        <button onclick="window.history.back()" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+            ← Back
+        </button>
+        <button id="themeToggle" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+            🌓 Toggle Theme
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 container mx-auto px-4 py-24 md:py-36 pb-20">
+        <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+            InstantShare
+        </h1>
+
+        <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
+            <!-- Share Section -->
+            <div id="shareSection">
+                <textarea 
+                    id="contentInput"
+                    class="input-field w-full h-32 p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 resize-none transition-all"
+                    placeholder="Paste your text or link here..."
+                ></textarea>
+                <button 
+                    id="shareBtn"
+                    class="w-full mt-6 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all transform hover:scale-[1.02] active:scale-95"
+                >
+                    Generate Share Code
+                </button>
+            </div>
+
+            <!-- Result Section -->
+            <div id="resultSection" class="hidden mt-8 text-center">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">Your share code:</p>
+                <div class="inline-block bg-gray-100 dark:bg-gray-700 px-6 py-3 rounded-lg">
+                    <span id="shareCode" class="text-3xl font-mono font-bold text-blue-600 dark:text-blue-400">----</span>
+                </div>
+                <button 
+                    id="copyBtn"
+                    class="mt-6 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+                >
+                    Copy Code
+                </button>
+            </div>
+
+            <!-- Retrieve Section -->
+            <div class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
+                <div class="flex gap-4">
+                    <input 
+                        type="text" 
+                        id="retrieveInput"
+                        class="flex-1 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-transparent text-gray-900 dark:text-white placeholder-gray-500"
+                        placeholder="Enter 4-digit code"
+                        maxlength="4"
+                    >
+                    <button 
+                        id="retrieveBtn"
+                        class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
+                    >
+                        Retrieve
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Content Modal -->
+    <div id="contentModal" class="modal bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8 w-11/12 md:max-w-2xl">
+        <div class="text-right">
+            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 text-2xl">
+                ×
+            </button>
+        </div>
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">Shared Content</h2>
+        <div id="sharedContent" class="mb-6 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg break-words"></div>
+        <button 
+            onclick="copySharedContent()"
+            class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+        >
+            Copy Content
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 w-full py-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <span class="text-gray-600 dark:text-gray-300">
+                Made with ❤️ by 
+                <span class="bapu-signature font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    BAPUx03
+                </span>
+            </span>
+            <button 
+                onclick="window.open('https://github.com/BAPUx03', '_blank')"
+                class="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 dark:bg-gray-600 dark:hover:bg-gray-700 text-white rounded-lg transition-colors"
+            >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+                My GitHub
+            </button>
+        </div>
+    </footer>
+</body>
+</html>
