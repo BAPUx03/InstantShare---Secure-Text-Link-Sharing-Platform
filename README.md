@@ -41,7 +41,7 @@
 ## 🎥 Demo
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=InstantShare+Demo+GIF" alt="Demo GIF">
+  <img src="https://github.com/user-attachments/assets/d7ce46b8-657c-413c-b716-f1e5a4107dee" alt="Demo GIF">
 </div>
 
 ---
